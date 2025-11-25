@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import numpy as np
 from joblib import load
@@ -6,6 +8,17 @@ import pandas as pd
 from pathlib import Path
 
 app = FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # for testing; in production, restrict to your frontend domain
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.mount("/", StaticFiles(directory="../frontend", html=True), name="index")
 
 # Load preprocessing pipeline and model
 preprocessor = load(Path("../models/preprocessor.joblib"))
