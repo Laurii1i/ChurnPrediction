@@ -19,8 +19,8 @@ app.add_middleware(
 )
 
 # Load preprocessing pipeline and model
-preprocessor = load(Path("../models/preprocessor.joblib"))
-model = load(Path("../models/logistic_regression_model.joblib"))
+preprocessor = load(Path("../../models/preprocessor.joblib"))
+model = load(Path("../../models/logistic_regression_model.joblib"))
 
 # Define request schema
 class CustomerData(BaseModel):
