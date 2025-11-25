@@ -18,8 +18,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/", StaticFiles(directory="../frontend", html=True), name="index")
-
 # Load preprocessing pipeline and model
 preprocessor = load(Path("../models/preprocessor.joblib"))
 model = load(Path("../models/logistic_regression_model.joblib"))
@@ -58,3 +56,5 @@ def predict(data: CustomerData):
     prob = model.predict_proba(X_processed)[:, 1][0]
     
     return {"churn_probability": prob}
+
+app.mount("/", StaticFiles(directory="../frontend", html=True), name="index")
