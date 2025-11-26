@@ -10,12 +10,30 @@ This project has strong real-world applicability, as accurate churn prediction i
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
-- [Modeling](#model)
+  - [Feature Overview](#feature-overview)
+  - [Data Analysis](#data-analysis)
+  - [Data Preprocessing](#data-preprocessing)
+- [Modeling](#modeling)
+  - [Model Parameters](#model-parameters)
+    - [Logistic Regression](#logistic-regression)
+    - [Random Forest](#random-forest)
+    - [XGBoost](#xgboost)
+  - [Threshold Optimization](#threshold-optimization)
+  - [Evaluation Metrics](#evaluation-metrics)
+- [Results](#results)
+  - [Model Comparison](#model-comparison)
+  - [Visual Results](#visual-results)
+  - [Key Observations](#key-observations)
 - [Backend](#backend)
+  - [Features](#features)
+  - [Key Files](#key-files)
+  - [Running Locally](#running-locally)
 - [Frontend](#frontend)
 - [Usage](#usage)
 - [Deployment](#deployment)
+- [Potential Improvements](#potential-improvements)
 - [License](#license)
+
 
 ---
 
@@ -201,11 +219,14 @@ After training the three models and evaluating them using ROC–AUC, Weighted F1
 
 ### Visual Results
 
-**Model Performance Comparison:**  
-![Model Performance](results/model_performance.png)
+<p align="center">
+  <img src="results/model_performance.png" alt="Model Performance"/>
+</p>
 
-**ROC Curves for All Models:**  
-![ROC Curves](results/roc_curves.png)
+<p align="center">
+  <img src="results/roc_curves.png" alt="ROC Curves" width="600"/>
+</p>
+
 
 ### Key Observations
 
