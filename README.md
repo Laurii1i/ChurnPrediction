@@ -67,7 +67,7 @@ The target variable is:
 
 ### Feature Overview
 
-Some of the key features include:
+The features include:
 
 - **Demographics:** `gender`, `SeniorCitizen`, `Partner`, `Dependents`  
 - **Service-related:** `tenure`, `PhoneService`, `MultipleLines`, `InternetService`, `OnlineSecurity`,  
@@ -229,7 +229,7 @@ After training the three models and evaluating them using ROC–AUC, Weighted F1
 
 ### Key Observations
 
-- **Logistic Regression** achieved the highest ROC–AUC (0.836) and the lowest minimized weighted cost (622). Its strong performance suggests that the relationship between features and churn is largely linear. Furthermore, the ROC-curve for logistic regression outperforms the other models slightly. Logistic Regression is likely the best choice for business-oriented churn prediction due to its interpretability and efficiency.  
+- **Logistic Regression** achieved the highest ROC–AUC (0.836) and the lowest minimized weighted cost (622). Its strong performance suggests that the relationship between features and churn is largely linear. Furthermore, the ROC-curve for logistic regression outperforms the other models slightly. In the scope of this project it seems like logistic regression is the best choice for business-oriented churn prediction due to its accuracy.  
 
 - **Random Forest** reached the highest weighted F1 score (0.681) at an optimal threshold of 0.18. While it balanced precision and recall well, its minimized weighted cost (659) was higher than Logistic Regression, indicating slightly more business risk in terms of misclassified high-risk churners.  
 
@@ -290,9 +290,9 @@ This deployment demonstrates a **full-stack implementation**, combining a FastAP
 While this project demonstrates effective churn prediction and deployment, it could be further strengthened by analyzing **model convergence** and **overfitting**.  
 For example, checking the convergence of the Logistic Regression model would ensure the iterative optimization reached a stable solution after one-hot encoding increased the feature space. Examining overfitting by comparing training and test performance or visualizing learning curves for Random Forest and XGBoost—could help fine-tune the models and improve generalization.  
 
-Additionally, the models were trained with basic parameter choices and **hyperparameter tuning was not extensively performed**. Exploring a wider range of parameters could potentially improve model performance and better align predictions with business objectives. Incorporating these analyses and experiments would provide deeper insights into model reliability and robustness in real-world scenarios.¨
+Additionally, the models were trained with basic parameter choices and **hyperparameter tuning was not extensively performed**. Exploring a wider range of parameters could potentially improve model performance and better align predictions with business objectives. Incorporating these analyses and experiments would provide deeper insights into model reliability and robustness in real-world scenarios.
 
 ## License
 
 This project is licensed under the **MIT License**.  
-See the [LICENSE](LICENSE) file in the repository for full details.
+See the [LICENSE](LICENSE.txt) file in the repository for full details.
