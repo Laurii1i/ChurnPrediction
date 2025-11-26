@@ -120,21 +120,21 @@ The Logistic Regression and Random Forest models were implemented using the scik
 Each model was configured with parameters selected to balance performance, interpretability, and computational efficiency:
 
 #### **Logistic Regression**
-- **max_iter=1000**
+- **max_iter=1000**<br>
    I chose to increase max_iter beyond the default to ensure convergence after one-hot encoding expands the feature space.  
-- **random_state=42**
+- **random_state=42**<br>
    Added a random number seed to ensure reproducibility. 
 
 Logistic Regression serves as a strong, interpretable baseline model and is easy to deploy due to its simplicity.
 
 #### **Random Forest**
-- **n_estimators=200** 
+- **n_estimators=200**<br> 
    Provides a robust ensemble size without excessive training time.  
-- **max_depth=None**
+- **max_depth=None**<br>
    This selection allows trees to grow fully, enabling the model to capture complex structures.  
-- **n_jobs=-1**
+- **n_jobs=-1**<br>
    Utilizes all CPU cores for faster computation.  
-- **random_state=42**
+- **random_state=42**<br>
     Reproducibility.
 
 This configuration offers strong predictive performance while maintaining robustness against overfitting.
@@ -158,7 +158,7 @@ A custom cost function was defined:
 
 `Cost = 5 × FN + FP`
 
-False negatives (**missed churners**) were weighted five times more heavily than false positives, since losing a customer is more costly than mistakenly flagging one.  
+where FN is the number of false negatives (Churner classified as non-churner) and FP the number of false positives (non-churner classified as churner). False negatives were weighted five times more heavily than false positives, since losing a customer is more costly than mistakenly flagging one.  
 For each model, predicted probabilities were evaluated across a range of thresholds to find the value that minimized this weighted cost.
 
 ---
