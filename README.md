@@ -206,7 +206,7 @@ pip install requirements-dev.txt
 
 ## Results
 
-After training the three models and evaluating them using ROC–AUC, Weighted F1 Score, and the minimized weighted cost, small differences emerged. The ROC-curve was also plotted for all of the models, and it can be found under `/results/`.
+After training the three models and evaluating them using ROC–AUC, Weighted F1 Score, and the minimized weighted cost, small differences emerged. The ROC-curve was also plotted for all of the models.
 
 ### Model Comparison
 
@@ -218,14 +218,20 @@ After training the three models and evaluating them using ROC–AUC, Weighted F1
 
 ### Visual Results
 
-<br>
+
+The **ROC (Receiver Operating Characteristic) curve** illustrates the performance of a binary classifier across different classification thresholds.  
+- The **x-axis** shows the False Positive Rate (FPR).  
+- The **y-axis** shows the True Positive Rate (TPR, also called recall).  
+- A curve closer to the top-left corner indicates better model performance.  
+- The **area under the curve (AUC)** quantifies overall separability; higher values (closer to 1) indicate better distinction between churners and non-churners.
+ <br>
 <p align="center">
   <img src="results/model_performance.png" alt="Model Performance"/>
 </p>
 
 <br>
 <p align="center">
-  <img src="results/roc_curves.png" alt="ROC Curves" width="400"/>
+  <img src="results/roc_curves.png" alt="ROC Curves" width="500"/>
 </p>
 
 
