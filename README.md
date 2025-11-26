@@ -156,9 +156,7 @@ These hyperparameters form a strong starting point for tabular classification ta
 To better reflect business priorities, model evaluation included optimizing the classification threshold rather than relying on the default 0.5 split.  
 A custom cost function was defined:
 
-\[
-\text{Cost} = 5 \times FN + FP
-\]
+`Cost = 5 × FN + FP`
 
 False negatives (**missed churners**) were weighted five times more heavily than false positives, since losing a customer is more costly than mistakenly flagging one.  
 For each model, predicted probabilities were evaluated across a range of thresholds to find the value that minimized this weighted cost.
@@ -218,12 +216,6 @@ After training the three models and evaluating them using ROC–AUC, Weighted F1
 
 ### Visual Results
 
-
-The **ROC (Receiver Operating Characteristic) curve** illustrates the performance of a binary classifier across different classification thresholds.  
-- The **x-axis** shows the False Positive Rate (FPR).  
-- The **y-axis** shows the True Positive Rate (TPR, also called recall).  
-- A curve closer to the top-left corner indicates better model performance.  
-- The **area under the curve (AUC)** quantifies overall separability; higher values (closer to 1) indicate better distinction between churners and non-churners.
  <br>
 <p align="center">
   <img src="results/model_performance.png" alt="Model Performance"/>
@@ -237,7 +229,7 @@ The **ROC (Receiver Operating Characteristic) curve** illustrates the performanc
 
 ### Key Observations
 
-- **Logistic Regression** achieved the highest ROC–AUC (0.836) and the lowest minimized weighted cost (622). Its strong performance suggests that the relationship between features and churn is largely linear. Logistic Regression is likely the best choice for business-oriented churn prediction due to its interpretability and efficiency.  
+- **Logistic Regression** achieved the highest ROC–AUC (0.836) and the lowest minimized weighted cost (622). Its strong performance suggests that the relationship between features and churn is largely linear. Furthermore, the ROC-curve for logistic regression outperforms the other models slightly. Logistic Regression is likely the best choice for business-oriented churn prediction due to its interpretability and efficiency.  
 
 - **Random Forest** reached the highest weighted F1 score (0.681) at an optimal threshold of 0.18. While it balanced precision and recall well, its minimized weighted cost (659) was higher than Logistic Regression, indicating slightly more business risk in terms of misclassified high-risk churners.  
 
